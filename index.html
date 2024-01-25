@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Book Library</h1>
+    </header>
+    <div id="app">
+        <form id="bookForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <input type="text" id="author" placeholder="Author" required>
+            <select id="category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Science Fiction">Science Fiction</option>
+            </select>
+            <button type="button" onclick="addBook()">Add Book</button>
+        </form>
+
+        <div id="searchForm">
+            <input type="text" id="searchInput" placeholder="Search by title or author">
+            <select id="categoryFilter">
+                <option value="">All Categories</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-Fiction">Non-Fiction</option>
+                <option value="Science Fiction">Science Fiction</option>
+            </select>
+            <button type="button" onclick="searchBooks()">Search</button>
+        </div>
+
+        <h2>Borrowing History</h2>
+        <button onclick="clearBorrowingHistory()">Clear History</button>
+        <ul id="borrowingHistory"></ul>
+
+        <h2>Return History</h2>
+        <button onclick="clearReturnHistory()">Clear Return History</button>
+        <ul id="returnHistory"></ul>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="bookList"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
